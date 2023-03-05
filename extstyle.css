@@ -1,0 +1,38 @@
+body{
+    background-color: yellow;
+
+}
+h12{
+    background-color:aliceblue;
+    font-size:xxx-large;
+}
+h13
+{
+    background-color: aqua;
+    font-size: x-large;
+}
+
+.header1
+{
+    background-color:black;
+
+}
+
+p{
+    color: aqua;
+    background-color: black;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.crcl
+{
+    background-color: dimgrey;
+}
+
+d1
+{
+    color: light-green;
+    font-size: xx-large;
+    font-style: italic;
+}
