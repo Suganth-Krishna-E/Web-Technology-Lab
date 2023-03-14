@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Simple Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>        
+
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-8 signup-box">
+                    <form style="background-color: #80fdac;" name="frm1">
+                        <h1 style="text-align: center;">Simple Calculator</h1>
+                        <div class="row justify-content-center">
+                            <input id = "calop" type ="text" name = "txtbox"> <br> <br>
+                        </div>
+
+                        <div class="row mt-2 mb-2 ml-2 mr-2 justify-content-center">
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "1" onclick = "click_1()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "2" onclick = "click_2()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "3" onclick = "click_3()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "+" onclick = "click_add()"> 
+                        </div>
+                            
+                        <div class="row mt-2 mb-2 ml-2 mr-2 justify-content-center">
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "4" onclick = "click_4()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "5" onclick = "click_5()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "6" onclick = "click_6()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "-" onclick = "click_mul()">  
+                        </div>
+
+                        <div class="row mt-2 mb-2 ml-2 mr-2 justify-content-center">
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "7" onclick = "click_7()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "8" onclick = "click_8()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "9" onclick = "click_9()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "*" onclick = "click_mul()">
+                        </div>
+
+                        <div class="row mt-2 mb-2 ml-2 mr-2 justify-content-center">
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "/" onclick = "click_div()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "0" onclick = "click_0()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "." onclick = "click_point()">  
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "=" onclick = "click_eql()">
+                        </div>
+
+                        <div class="row mt-2 mb-2 ml-2 mr-2 justify-content-center">
+                            <input class="col-md-1 ml-2 mr-2" type = "button" value = "Clear All" onclick = "frm1.txtbox.value = ' ' ">  
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>    
+        
+
+        <script>
+            function click_0()
+            {
+                frm1.txtbox.value += '0' ;
+            }
+            function click_1()
+            {
+                frm1.txtbox.value += '1' ;
+            }
+            function click_2()
+            {
+                frm1.txtbox.value += '2' ;
+            }
+            function click_3()
+            {
+                frm1.txtbox.value += '3' ;
+            }
+            function click_4()
+            {
+                frm1.txtbox.value += '4' ;
+            }
+            function click_5()
+            {
+                frm1.txtbox.value += '5' ;
+            }
+            function click_6()
+            {
+                frm1.txtbox.value += '6' ;
+            }
+            function click_7()
+            {
+                frm1.txtbox.value += '7' ;
+            }
+            function click_8()
+            {
+                frm1.txtbox.value += '8' ;
+            }
+            function click_9()
+            {
+                frm1.txtbox.value += '9' ;
+            }
+            function click_add()
+            {
+                frm1.txtbox.value += '+' ;
+            }
+            function click_sub()
+            {
+                frm1.txtbox.value += '-' ;
+            }
+            function click_mul()
+            {
+                frm1.txtbox.value += '*' ;
+            }
+            function click_div()
+            {
+                frm1.txtbox.value += '/' ;
+            }
+            function click_point()
+            {
+                frm1.txtbox.value += '.' ;
+            }
+            function click_eql()
+            {
+                frm1.txtbox.value = eval(frm1.txtbox.value);
+            }
+
+        </script>
+    </body>
+</html>
