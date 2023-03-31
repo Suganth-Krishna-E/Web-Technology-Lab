@@ -1,0 +1,221 @@
+<html>
+    <head>
+        <script>
+            function frmvalidation()
+            {
+                
+                var name = document.Form1.uname.value;
+                if(name=="")
+                {
+                    alert("Please enter your name");
+                    document.Form1.uname.focus();
+                    return false;
+                }
+                else if(!isNaN(name))
+                {
+                    alert("Numbers are not allowed");
+                    document.Form1.uname.focus();
+                    return false;
+                }
+
+                var mail = document.Form1.mid.value;
+                if(mail == "")
+                {
+                    alert("Please enter your name");
+                    document.Form1.mid.focus();
+                    return false;
+                }
+                else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)))
+                {
+                    alert("Please enter a valid email");
+                    return false;                
+                }
+
+
+                var mobile = document.myform.phno.value;
+                if(mobile =="")
+                {
+                    alert("please, Enter your moblie number!!!");
+                    document.myform.phno.focus();
+                    return false;
+                }
+                else if(mobile.length<10 || mobile.length>10)
+                {
+                    alert("Digits Exceeded");
+                    document.Form1.phno.focus();
+                    return false;
+                }
+
+                var gen = document.Form1.gender;
+                var status =0;
+                for(var i=0; i<3; i++)
+                {
+                    if(gen[i].checked==true){
+                        status=1;
+                    }
+                }
+                if(status==0)
+                {
+                    alert("Please select gender");
+                    return false;
+                }
+
+                var addr=document.Form1.addr;
+                if(addr=="")
+                {
+                    alert("Please enter address");
+                    document.Form1.addr.focus();
+                    return false;
+                }
+
+                var lngsel = document.Form1.lng;
+                if(lngsel.selectedIndex<2)
+                {
+                    alert("Select atleast 2 Languages");
+                    document.Form1.lng.focus();
+                    return false;
+                }
+
+                var dep = document.Form1.dept;
+                var status =0;
+                for(var i=0; i<3; i++)
+                {
+                    if(dep[i].checked==true){
+                        status=1;
+                    }
+                }
+                if(status==0)
+                {
+                    alert("Please select Department");
+                    return false;
+                }                
+
+                var dob = document.Form1.dob.value;
+                if(dob == "")
+                {
+                    alert("Please enter your DOB");
+                    document.Form1.dob.focus();
+                    return false;
+                }
+                else if(!(\s+(?:0[1-9]|[12][0-9]|3[01])[-/.](?:0[1-9]|1[012])[-/.](?:19\d{2}|20[01][0-9]|2023)\b.test(mail)))
+                {
+                    alert("Please enter a valid email");
+                    return false;                
+                }
+                
+
+                var pwd = document.Form1.pwd.value;
+                if(pwd == "")
+                {
+                    alert("Please enter a password");
+                    document.Form1.pwd.focus();
+                    return false;
+                }
+                var pwd1 = document.Form1.pwd1.value;
+                if(pwd1 == "")
+                {
+                    alert("Please re-enter your password");
+                    document.Form1.pwd1.focus();
+                    return false;
+                }
+                if(pwd != pwd1)
+                {
+                    alert("Password Mismatch");
+                    document.Form1.pwd1.focus();
+                    return false;
+                }
+            
+                return true;
+            }
+        </script>
+        <style>
+            .container
+            {
+                display: grid;
+                border: 2px solid rgba(230, 81, 81, 0.699);
+                padding: 20px 20px 20px 20px;
+                justify-content: center;
+            }
+            
+        </style>
+        <title>Form Validation</title>
+
+    </head>
+    <body style="background-color: rgb(244, 174, 82);">
+        <div class="container">
+        <form action="submit.html" name="Form1"  onsubmit="return frmvalidation()">
+
+            <div>
+                <label for="uname">Name:</label>
+                <input type="text" id="uname" name="UserName">
+            </div> <br>
+            
+            <div>
+                <label for="mid">Email:</label>
+                <input type="text" id="mid" name="Email">
+            </div> <br>
+                        
+            <div>
+                <label for="phno">Mobile number:</label>
+                <input type="text" id="phno" name="Phone">
+            </div> <br>
+            
+            <div>
+                <label for="gender">Gender:</label> <br>
+                <input type="radio" id="gender" name="Gender">
+                <label for="male">Male</label> <br>
+                <input type="radio" id="gender" name="Gender">
+                <label for="female">Female</label> <br>
+                <input type="radio" id="gender" name="Gender">
+                <label for="others">Others</label> <br>
+            </div> <br>
+
+            <div>
+                <label for="addr">Address:</label> <br>
+                <textarea id="addr" rows="4" columns="50"></textarea>
+            </div> <br>
+            
+            <div>
+                <label for="lng">Language specialized:</label> <br>
+                <select type="text" id="lng" name="lang"> 
+                    <option value="JAVA">OOP's with Java</option>
+                    <option value="PYTHON">Python</option>
+                    <option value="C++">OOP's with C++</option>
+                    <option value="VB">Visual Basic</option>
+                    <option value="CA">Computer Architectture</option>
+                </select>
+            </div> <br>
+
+            <div>
+                <label for="dept">Department:</label> <br>
+                <input type="radio" id="dept" name="dept">
+                <label for="AI-ML">AI-ML</label> <br>
+                <input type="radio" id="dept" name="dept">
+                <label for="AI-DS">AI-DS</label> <br>
+                <input type="radio" id="dept" name="dept">
+                <label for="others">Others</label> <br>
+            </div> <br>
+
+            <div>
+                <label for="dob">Date of Birth:</label> <br>
+                <input type="date" id="dob" name="DOB">
+            </div> <br>
+            
+            <div>
+                <label for="pwd">Password:</label>
+                <input type="text" id="pwd" name="Password">
+            </div> <br>
+            
+            <div>
+                <label for="pwd1">Confirm Password:</label>
+                <input type="text" id="pwd1" name="RPassword">
+            </div> <br>
+
+
+            <div>
+                <input type="submit" id="sub" name="sub">
+                
+            </div> <br>
+    </form>
+    </body>
+</html>
