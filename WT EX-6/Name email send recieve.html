@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <script>
+            function validate()
+            {
+                var uname = document.Form1.name.value;
+                if(uname=="")
+                {
+                    alert("Please enter your name");
+                    document.Form1.name.focus();
+                    return false;
+                }
+                else if(!isNaN(uname))
+                {
+                    alert("Numbers are not allowed");
+                    document.Form1.name.focus();
+                    return false;
+                }
+    
+                var mail = document.Form1.email.value;
+                if(mail == "")
+                {
+                    alert("Please enter your name");
+                    document.Form1.email.focus();
+                    return false;
+                }
+                else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)))
+                {
+                    alert("Please enter a valid email");
+                    document.Form1.email.focus();
+                    return false;                
+                }
+    
+                var pwd01 = document.Form1.pwd1.value;
+                if(pwd01 == "")
+                {
+                    alert("Please enter a password");
+                    document.Form1.pwd1.focus();
+                    return false;
+                }
+                var pwd02 = document.Form1.pwd2.value;
+                if(pwd02 == "")
+                {
+                    alert("Please re-enter your password");
+                    document.Form1.pwd2.focus();
+                    return false;
+                }
+                if(pwd01 != pwd02)
+                {
+                    alert("Password Mismatch");
+                    document.Form1.pwd1.focus();
+                    return false;
+                }
+            
+                return true;
+    
+            }
+        </script>            
+        <title>Send and Recieve</title>
+    </head>
+    <body>
+        <form action="http://localhost:8001/namemailreqres" method="GET" name="Form1" onsubmit="return validate()">
+            <label>Name:</label>
+            <input type="text" name="name" /> <br>
+            
+            <label>Email:</label>
+            <input type="text" name="email" /> <br>
+
+            <label>Password:</label>
+            <input type="password" name="pwd1" /> <br>
+
+            <label>Re-enter password:</label>
+            <input type="password" name="pwd2" /> <br>
+
+            <button type="submit">SUBMIT</button>
+        </form>
+
+    </body>
+</html>
