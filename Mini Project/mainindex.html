@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Let's Predict</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+
+
+        <script>
+
+		const knnClassifier = RandomForestRegresser();
+
+            function validate()
+            {
+                var uid = document.Form1.mod.value;
+                if(uid=="")
+                {
+                    alert("Please enter your car Model with Brand");
+                    document.Form1.mod.focus();
+                    return false;
+                }
+    
+                
+                var year = document.Form1.year.value;
+                if(year == "")
+                {
+                    alert("Please enter a valid make year of car");
+                    document.Form1.year.focus();
+                    return false;
+                }
+
+
+                var kms = document.Form1.kms.value;
+                if(kms == "")
+                {
+                    alert("Please enter valid driven KiloMetres");
+                    document.Form1.kms.focus();
+                    return false;
+                }
+
+                var fuel = document.Form1.fuel.value;
+                if(fuel == "")
+                {
+                    alert("Please enter a valid fuel type");
+                    document.Form1.fuel.focus();
+                    return false;
+                }
+
+                var seller = document.Form1.slr.value;
+                if(seller == "")
+                {
+                    alert("Please enter a valid seller type");
+                    document.Form1.slr.focus();
+                    return false;
+                }
+
+
+
+                return true;
+    
+            }
+        </script>            
+
+
+  </head>
+  <body>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6 signup-box">
+
+          <h1><span class="input-group-addon"><i class="fa fa-terminal"></i></span>CAR PRICE PREDICTOR</h1>
+
+    <form style="background-color: #ffbe6e78;" action="http://localhost:8004/predictvalue" method="GET" onsubmit="return validate()">
+        
+        <div class="form-group">
+            <label for="mod">Model with Brand</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-car"></i></span>
+              <input type="text" class="form-control" id="mod" name="mod" placeholder="Model">
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="year">Year</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-border-middle"></i></span>
+            <input type="number" class="form-control" id="year" name="year" placeholder="Make Year">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="kms">KM_Driven</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-"></i></span>
+            <input type="number" class="form-control" id="kms" name="kms" placeholder="KMS">
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="fuel">Fuel Type</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-"></i></span>
+ 		
+		<select name="fuel" id="fuel">
+		  <option value=""></option>
+		  <option value="3">Petrol</option>
+		  <option value="1">Diesel</option>
+		  <option value="2">LPG</option>
+		  <option value="0">CNG</option>
+		</select>
+
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="slr">Seller Type</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-"></i></span>
+		<select name="slr" id="slr">
+		  <option value=""></option>
+		  <option value="1">Individual</option>
+		  <option value="0">Dealer</option>
+		</select>
+
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="slr">Transmission Type</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-"></i></span>
+		<select name="trn" id="trn">
+		  <option value=""></option>
+		  <option value="1">Manual</option>
+		  <option value="0">Automatic</option>
+		</select>
+
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="price">Predicted Price</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-"></i></span>
+            <input type="text" class="form-control" id="price" name="price" value="{{price}}" placeholder="Predicted Price">
+          </div>
+        </div>
+
+
+
+        <div class="input-group">
+            <button type="submit">SUBMIT</button>
+        </div>
+
+        
+
+      </form>
+</div>
+</div>
+</div>
+
+    </body>
+</html>

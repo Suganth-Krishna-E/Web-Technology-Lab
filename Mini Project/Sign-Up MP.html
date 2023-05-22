@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>
+            function validate()
+            {
+                var uname = document.Form1.name.value;
+                if(uname=="")
+                {
+                    alert("Please enter your name");
+                    document.Form1.name.focus();
+                    return false;
+                }
+                else if(!isNaN(uname))
+                {
+                    alert("Numbers are not allowed");
+                    document.Form1.name.focus();
+                    return false;
+                }
+    
+                var mail = document.Form1.email.value;
+                if(mail == "")
+                {
+                    alert("Please enter your name");
+                    document.Form1.email.focus();
+                    return false;
+                }
+                else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)))
+                {
+                    alert("Please enter a valid email");
+                    document.Form1.email.focus();
+                    return false;                
+                }
+
+                var pwd01 = document.Form1.pwd1.value;
+                if(pwd01 == "")
+                {
+                    alert("Please enter a password");
+                    document.Form1.pwd1.focus();
+                    return false;
+                }
+                var pwd02 = document.Form1.pwd2.value;
+                if(pwd02 == "")
+                {
+                    alert("Please re-enter your password");
+                    document.Form1.pwd2.focus();
+                    return false;
+                }
+                if(pwd01 != pwd02)
+                {
+                    alert("Password Mismatch");
+                    document.Form1.pwd1.focus();
+                    return false;
+                }
+
+    
+                var mobile=document.Form1.mob.value;
+		if(mobile=="")
+		{
+		    alert("Please enter a valid mobile number");
+		    document.Form1.mob.focus():
+		    return false;
+		}
+
+            
+                return true;
+    
+            }
+        </script>            
+
+
+  </head>
+  <body>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6 signup-box">
+
+          <h1><span class="input-group-addon"><i class="fa fa-cogs"></i></span>Sign Up</h1>
+
+
+    <form style="background-color: #5ac3ff65;" action="http://localhost:8001/nameemailreqres" method="GET" name="Form1" onsubmit="return validate()" >
+        
+        <div class="form-group">
+          <label for="fname">Name</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+            <input type="text" class="form-control" id="name" name="name" placeholder="First name">
+          </div>
+        </div>
+        
+
+        <div class="form-group">
+          <label for="email">E-Mail</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+            <input type="email" class="form-control" id="email" name="email" placeholder="E-mail Address">
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="phno">Phone #</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+              <input type="number" class="form-control" id="mob" name="mob" placeholder="+91 0000000000">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="addr">Address</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-home"></i></span>
+                <input type="text" class="form-control" id="addr" name="addr" placeholder="Address">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="pwd1">Enter Password</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-terminal"></i></span>
+                <input type="text" class="form-control" id="pwd1" name="pwd1" placeholder="Enter Password">
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="pwd1">Confirm Password</label>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-terminal"></i></span>
+                <input type="text" class="form-control" id="pwd2" name="pwd2" placeholder="Confirm Password">
+            </div>
+        </div>
+
+        <div class="form-group">
+		<button type="submit">SUBMIT</button>
+	</div>
+
+
+      </form>
+</div>
+</div>
+</div>
+
+    </body>
+</html>

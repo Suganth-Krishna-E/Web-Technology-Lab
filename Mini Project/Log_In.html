@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Log IN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script>
+            function validate()
+            {
+                var uid = document.Form1.uid.value;
+                if(uid=="")
+                {
+                    alert("Please enter your name");
+                    document.Form1.uid.focus();
+                    return false;
+                }
+                else if(!isNaN(uid))
+                {
+                    alert("Numbers are not allowed");
+                    document.Form1.uid.focus();
+                    return false;
+                }
+    
+                
+                var pwd01 = document.Form1.pwd.value;
+                if(pwd01 == "")
+                {
+                    alert("Please enter a password");
+                    document.Form1.pwd.focus();
+                    return false;
+                }
+                return true;
+    
+            }
+        </script>            
+
+
+  </head>
+  <body>
+
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6 signup-box">
+
+          <h1><span class="input-group-addon"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></span>Log In</h1>
+
+    <form style="background-color: #ffbe6e78;" action="http://localhost:8003/loginval" method="GET" onsubmit="return validate()">
+        
+        <div class="form-group">
+            <label for="uid">User Id</label>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
+              <input type="text" class="form-control" id="uid" name="uid" placeholder="User ID">
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pwd">Password</label>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-key"></i></span>
+            <input type="password" class="form-control" id="pwd" name="pwd" placeholder="Password">
+          </div>
+        </div>
+
+        <div class="input-group">
+            <input type="checkbox">Remember Me</input>
+        </div>
+
+
+        <div class="input-group">
+            <button type="submit">SUBMIT</button>
+        </div>
+
+        
+
+      </form>
+</div>
+</div>
+</div>
+
+    </body>
+</html>
